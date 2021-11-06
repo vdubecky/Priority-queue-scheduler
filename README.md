@@ -1,1 +1,1 @@
-# Priority-queue-scheduler
+# Priority queue scheduler in C
