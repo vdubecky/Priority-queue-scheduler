@@ -44,10 +44,7 @@ static bool process_evaluation(process_type push_process, process_type process)
     unsigned long process_priority = process.niceness * process.remaining_time;
 
     if (push_process_priority == process_priority) {
-        if (cpu_count(push_process.cpu_mask) < cpu_count(process.cpu_mask)) {
-            return true;
-        }
-        return false;
+        return cpu_count(push_process.cpu_mask) < cpu_count(process.cpu_mask);
     }
 
     return push_process_priority < process_priority;
